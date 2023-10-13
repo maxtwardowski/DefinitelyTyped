@@ -8,9 +8,9 @@
 import { Component, FC, ReactNode, Ref } from "react";
 import { FixedSizeList, ListOnItemsRenderedProps, VariableSizeList } from "react-window";
 
-type OnItemsRendered = (props: ListOnItemsRenderedProps) => any;
+export type OnItemsRendered = (props: ListOnItemsRenderedProps) => any;
 
-interface InfiniteLoaderProps {
+export interface InfiniteLoaderProps {
     isItemLoaded: (index: number) => boolean;
     loadMoreItems: (startIndex: number, stopIndex: number) => Promise<void> | void;
     itemCount: number;
@@ -23,4 +23,4 @@ declare class InfiniteLoader extends Component<InfiniteLoaderProps> {
     resetloadMoreItemsCache(autoReload?: boolean): void;
 }
 
-export = InfiniteLoader;
+export default InfiniteLoader;
